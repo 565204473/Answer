@@ -2,7 +2,8 @@
 class GameMain{
     constructor()
     {
-        Laya.init(600,400);
+        Laya.init(1280,720);
+        
     }
 }
 new GameMain();
