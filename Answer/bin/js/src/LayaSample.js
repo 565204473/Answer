@@ -8,6 +8,7 @@ var GameMain = /** @class */ (function () {
     GameMain.prototype.onloaded = function () {
         this.bgPage = new ui.GameStartUI();
         this.gamePage = new ui.GameUI();
+        this.game = new Game();
         console.log(1111);
         Laya.stage.addChild(this.bgPage);
         this.Oninit(this.bgPage);
@@ -17,12 +18,7 @@ var GameMain = /** @class */ (function () {
     };
     GameMain.prototype.OnBtnStartClick = function () {
         console.log("点击了开始");
-        this.InitGame(this.gamePage, this.bgPage);
-    };
-    GameMain.prototype.InitGame = function (itemGame, ItemOpen) {
-        console.log("显示游戏面板");
-        Laya.stage.addChild(itemGame);
-        Laya.stage.removeChild(ItemOpen);
+        this.game.InitGame(this.gamePage, this.bgPage);
     };
     return GameMain;
 }());

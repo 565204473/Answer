@@ -15,7 +15,7 @@
         {
             "x":15,
             "type":"Panel",
-            "props":{"width":1280,"height":720},
+            "props":{"y":0,"x":0,"width":1280,"height":720},
             "nodeParent":1,
             "label":"Panel",
             "isOpen":true,
@@ -27,7 +27,7 @@
                 {
                     "x":30,
                     "type":"Image",
-                    "props":{"y":0,"x":389,"width":500,"var":"ImgBg","skin":"comp/71726.jpg","height":378},
+                    "props":{"y":-2,"x":-26,"width":1280,"var":"ImgBg","skin":"comp/71726.jpg","pivotY":-8,"pivotX":-28,"height":720},
                     "nodeParent":9,
                     "label":"Image(ImgBg)",
                     "isDirectory":false,
@@ -40,7 +40,7 @@
                 {
                     "x":30,
                     "type":"Button",
-                    "props":{"y":308,"x":510,"width":243,"var":"BtnStart","stateNum":"1","skin":"comp/common049.png","sizeGrid":"15,0,5,0","label":"开始","height":57},
+                    "props":{"y":621,"x":520,"width":243,"var":"BtnStart","stateNum":"1","skin":"comp/common049.png","sizeGrid":"15,0,5,0","label":"开始","height":57},
                     "nodeParent":9,
                     "label":"Button(BtnStart)",
                     "isDirectory":false,

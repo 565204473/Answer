@@ -1,5 +1,6 @@
 D .
 D comp
+R 5816677E 1.jpg
 P D342A304 71726.jpg
 P D12221A9 bg.png
 P B03390E5 btn_close.png
@@ -10,6 +11,7 @@ P F7B6B7D7 clip_selectBox.png
 P 755271AE clip_tree_arrow.png
 P 859FD34C clip_tree_folder.png
 P A0E3B8F9 combobox.png
+P A5F1077D common009.png
 P FC7F2DA1 common049.png
 P 9EDA959E hscroll$bar.png
 P 1AB768D4 hscroll$down.png
