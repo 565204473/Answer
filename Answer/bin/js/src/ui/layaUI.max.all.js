@@ -22,7 +22,7 @@ var ui;
             _super.prototype.createChildren.call(this);
             this.createView(ui.GameUI.uiView);
         };
-        GameUI.uiView = { "type": "View", "props": { "width": 1280, "height": 720 }, "child": [{ "type": "Image", "props": { "width": 1280, "skin": "comp/1.jpg", "height": 720 } }, { "type": "Button", "props": { "y": 607, "x": 1173, "width": 40, "var": "BtnClose", "skin": "comp/common009.png", "sizeGrid": "0,0,0,0", "height": 40 } }, { "type": "Text", "props": { "y": 64, "x": 458, "width": 400, "text": "我是游戏主场景", "height": 50, "fontSize": 40, "color": "#ffffff" } }] };
+        GameUI.uiView = { "type": "View", "props": { "width": 1280, "height": 720 }, "child": [{ "type": "Button", "props": { "y": 607, "x": 1173, "width": 40, "var": "BtnClose", "stateNum": 1, "skin": "comp/common009.png", "sizeGrid": "0,0,0,0", "name": "BtnClose", "height": 40 } }, { "type": "Text", "props": { "y": 64, "x": 458, "width": 400, "text": "我是游戏主场景", "height": 50, "fontSize": 40, "color": "#ffffff" } }, { "type": "Button", "props": { "y": 623, "x": 499, "width": 177, "stateNum": 1, "skin": "comp/common049.png", "label": "label", "height": 39 } }, { "type": "Image", "props": { "y": 172, "x": 519, "skin": "comp/image.png" } }] };
         return GameUI;
     }(View));
     ui.GameUI = GameUI;

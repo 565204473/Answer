@@ -5,7 +5,7 @@ module ui {
     export class GameUI extends View {
 		public BtnClose:Laya.Button;
 
-        public static  uiView:any ={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Image","props":{"width":1280,"skin":"comp/1.jpg","height":720}},{"type":"Button","props":{"y":607,"x":1173,"width":40,"var":"BtnClose","stateNum":1,"skin":"comp/common009.png","sizeGrid":"0,0,0,0","height":40}},{"type":"Text","props":{"y":64,"x":458,"width":400,"text":"我是游戏主场景","height":50,"fontSize":40,"color":"#ffffff"}}]};
+        public static  uiView:any ={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Button","props":{"y":607,"x":1173,"width":40,"var":"BtnClose","stateNum":1,"skin":"comp/common009.png","sizeGrid":"0,0,0,0","name":"BtnClose","height":40}},{"type":"Text","props":{"y":64,"x":458,"width":400,"text":"我是游戏主场景","height":50,"fontSize":40,"color":"#ffffff"}},{"type":"Button","props":{"y":623,"x":499,"width":177,"stateNum":1,"skin":"comp/common049.png","label":"label","height":39}},{"type":"Image","props":{"y":178,"x":808,"skin":"comp/image.png"}},{"type":"Image","props":{"y":178,"x":301,"skin":"comp/image.png"}}]};
         constructor(){ super()}
         createChildren():void {
         			View.regComponent("Text",laya.display.Text);

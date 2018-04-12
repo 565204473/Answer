@@ -1,6 +1,7 @@
 
 class Game {
 
+    public gamePage: ui.GameUI;
     public InitGame(itemGame: ui.GameUI, ItemOpen: ui.GameStartUI): void {
         console.log("显示游戏面板" + itemGame.BtnClose.name);
         Laya.stage.addChild(itemGame);
