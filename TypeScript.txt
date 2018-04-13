@@ -20,3 +20,31 @@ let sumLength:number=(<string>sum).length;
 TypeScript 基础语法 B 变量声明
 1： let和var的定义产生的代码作用域的不同
 2： const 声明 例子： const num=666 常量的意思
+
+TypeScript 接口
+interface 接口定义 
+例子：
+ interface LabelledValue{
+  label:string;
+ }
+
+ function PrintLabel(labelledobj:LabelledValue){
+   console.log(labelledobj.label);
+ }
+ let myObj={size:10,label:"黄桥平"}
+ printLabel(myObj);
+ 
+ 可选属性接口
+ interface LabelledValue{
+   label? string
+ }
+ 
+ function PrintLabel(labelledobj:LabelledValue):{label,string}{
+ let newSquare={label:"我是layaAir"}
+  if(labelledobj.label){ 
+  newSquare.label=labelledobj.label;
+  return newSquare;
+ }
+   let mySquare=PrintLabel({label:"你是layaAir"});
+ }
+ 
