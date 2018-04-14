@@ -22,7 +22,7 @@ TypeScript 基础语法 B 变量声明
 2： const 声明 例子： const num=666 常量的意思
 
 TypeScript 接口
-interface 接口定义 
+1：interface 接口定义 
 例子：
  interface LabelledValue{
   label:string;
@@ -34,8 +34,8 @@ interface 接口定义
  let myObj={size:10,label:"黄桥平"}
  printLabel(myObj);
  
- 可选属性接口
- interface LabelledValue{
+ 可选属性接口:
+ 2：interface LabelledValue{
    label? string
  }
  
@@ -47,4 +47,10 @@ interface 接口定义
  }
    let mySquare=PrintLabel({label:"你是layaAir"});
  }
+ 
+ 3：ReadonlyArray类型
+ 例子： let a=number[]=[1,2,3,4];
+ let ro：ReadonlyArray<number>=a;
+ a=ro as number[];
+ 
  
