@@ -1,6 +1,5 @@
 D .
 D comp
-P D342A304 71726.jpg
 P D12221A9 bg.png
 P B03390E5 btn_close.png
 P 1F3929EA button.png
@@ -12,6 +11,7 @@ P 859FD34C clip_tree_folder.png
 P A0E3B8F9 combobox.png
 P A5F1077D common009.png
 P FC7F2DA1 common049.png
+R 2F832DA1 GameStart.png
 P 9EDA959E hscroll$bar.png
 P 1AB768D4 hscroll$down.png
 P 685261D3 hscroll$up.png
