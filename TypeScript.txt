@@ -1,0 +1,56 @@
+TypeScript 基础语法 A 基础类型
+
+1：布尔值 boolean
+2: 数字 number
+3: 字符串 string
+4: 数组 [] 例子：let list:number[]=[1,2,3];
+   泛型数组 Array<元素类型> 例子：let list: Array<number>=[1,2,3];
+5: 元组 Tuple 例子：let x：[string,number]; x=["文字"，数字]
+7：枚举 enum   例子：enum Color{Red,Green} let c:Color=Color.Green;
+8： Any类型
+9： void类型 无返回值类型
+10：null和undefined 类型
+11：Never类型
+12：类型断言（强制类型转换）
+例子：
+let sum: any="this is string" 
+let sumLength:number=(<string>sum).length;
+13: let 替代ver
+
+TypeScript 基础语法 B 变量声明
+1： let和var的定义产生的代码作用域的不同
+2： const 声明 例子： const num=666 常量的意思
+
+TypeScript 接口
+1：interface 接口定义 
+例子：
+ interface LabelledValue{
+  label:string;
+ }
+
+ function PrintLabel(labelledobj:LabelledValue){
+   console.log(labelledobj.label);
+ }
+ let myObj={size:10,label:"黄桥平"}
+ printLabel(myObj);
+ 
+ 可选属性接口:
+ 2：interface LabelledValue{
+   label? string
+ }
+ 
+ function PrintLabel(labelledobj:LabelledValue):{label,string}{
+ let newSquare={label:"我是layaAir"}
+  if(labelledobj.label){ 
+  newSquare.label=labelledobj.label;
+  return newSquare;
+ }
+   let mySquare=PrintLabel({label:"你是layaAir"});
+ }
+ 
+ 3：ReadonlyArray类型
+ 例子： let a=number[]=[1,2,3,4];
+ let ro：ReadonlyArray<number>=a;
+ a=ro as number[];
+ 
+ 

@@ -1,0 +1,9 @@
+/*
+* name;
+*/
+class UIMgr{
+    constructor(){
+
+    }
+    
+}
