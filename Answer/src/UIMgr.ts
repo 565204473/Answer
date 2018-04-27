@@ -20,6 +20,9 @@ namespace UI {
             this.dicScope.Add(Scope.Lobby, new List<IUI>());
             this.dicScope.Add(Scope.Battle, new List<IUI>());
             this.dicScope.Add(Scope.BattleEnd, new List<IUI>());
+        
+            console.log("先走构造"+this.dicScope[Scope.Battle]);
+
         }
 
         public GetNextZOrder(): number {
@@ -51,12 +54,11 @@ namespace UI {
                         panel = new PanelLobbyLogin(parent, ui.GameStartUI);
                         break;
                     case LOBBY_GAME:
-
+                        panel = new PanelBattleGame(parent, ui.GameUI);
                         break;
                     case LOBBY_BATTLE_END:
 
                         break;
-
                 }
 
                 if (panel != null) {
@@ -64,8 +66,8 @@ namespace UI {
                     panel.id = id;
                     this.lstUI.Add(id, panel);
                     if (scope != Scope.Global) {
-                        console.log(panel);
-                        this.dicScope.Item(scope).Add(panel);
+                        console.log("面板名字" + this.dicScope[scope]);                      
+                        this.dicScope.Item(scope).Add(panel);                  
                     }
                 }
             }

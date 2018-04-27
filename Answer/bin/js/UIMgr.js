@@ -18,6 +18,7 @@ var UI;
             this.dicScope.Add(Scope.Lobby, new List());
             this.dicScope.Add(Scope.Battle, new List());
             this.dicScope.Add(Scope.BattleEnd, new List());
+            console.log("先走构造" + this.dicScope[Scope.Battle]);
         }
         UIMgr.prototype.GetNextZOrder = function () {
             return ++this.zOrderIndex;
@@ -46,6 +47,7 @@ var UI;
                         panel = new UI.PanelLobbyLogin(parent_1, ui.GameStartUI);
                         break;
                     case UI.LOBBY_GAME:
+                        panel = new UI.PanelBattleGame(parent_1, ui.GameUI);
                         break;
                     case UI.LOBBY_BATTLE_END:
                         break;
@@ -55,7 +57,7 @@ var UI;
                     panel.id = id;
                     this.lstUI.Add(id, panel);
                     if (scope != Scope.Global) {
-                        console.log(panel);
+                        console.log("面板名字" + this.dicScope[scope]);
                         this.dicScope.Item(scope).Add(panel);
                     }
                 }

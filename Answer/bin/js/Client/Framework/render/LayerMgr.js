@@ -26,7 +26,6 @@ var Render;
             return this.layerHUD;
         };
         LayerMgr.prototype.GetUINode = function () {
-            console.log("&&&" + this.layerUI);
             return this.layerUI;
         };
         LayerMgr.getInstance = function () {

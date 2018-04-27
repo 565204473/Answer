@@ -16,9 +16,10 @@ var NumKeyCollection = /** @class */ (function () {
         return this.count;
     };
     NumKeyCollection.prototype.Add = function (key, value) {
-        if (this.items.hasOwnProperty(key.toString())) {
+        if (!this.items.hasOwnProperty(key.toString())) {
             this.count++;
             this.items[key] = value;
+            console.log("加进来了");
         }
     };
     NumKeyCollection.prototype.ForEach = function (func) {

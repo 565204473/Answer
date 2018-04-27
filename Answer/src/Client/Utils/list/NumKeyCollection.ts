@@ -23,10 +23,9 @@ class NumKeyCollection<T> implements IKeyedCollection<number, T> {
 
     public Add(key: number, value: T) {
 
-        if (this.items.hasOwnProperty(key.toString())) {
-
+        if (!this.items.hasOwnProperty(key.toString())) {
             this.count++;
-            this.items[key] = value;
+            this.items[key] = value;                 
         }
     }
 
