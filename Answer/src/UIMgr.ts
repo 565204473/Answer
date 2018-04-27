@@ -47,7 +47,8 @@ namespace UI {
                 let parent: Laya.Component = Render.LayerMgr.getInstance().GetUINode();
                 switch (id) {
                     case LOBBY_LOGIN:
-
+                        console.log("***" + parent);
+                        panel = new PanelLobbyLogin(parent, ui.GameStartUI);
                         break;
                     case LOBBY_GAME:
 
@@ -63,7 +64,7 @@ namespace UI {
                     panel.id = id;
                     this.lstUI.Add(id, panel);
                     if (scope != Scope.Global) {
-
+                        console.log(panel);
                         this.dicScope.Item(scope).Add(panel);
                     }
                 }

@@ -10,12 +10,16 @@ class GameMain {
         Laya.stage.alignH = Laya.Stage.ALIGN_CENTER;
         //设置垂直对齐
         Laya.stage.alignV = Laya.Stage.ALIGN_MIDDLE;
-        Laya.loader.load([{ url: "res/atlas/comp.atlas" }], Laya.Handler.create(this, this.onloaded));
-        Laya.timer.frameOnce(1, this, this.Init);
+        // Laya.loader.load([{ url: "res/atlas/comp.atlas" }], Laya.Handler.create(this, this.onloaded));
+       // Laya.timer.frameOnce(1, this, this.Init);
+        Render.LayerMgr.getInstance().init();
+        UI.UIMgr.GetInstance().Show(UI.LOBBY_LOGIN, UI.Scope.Login);
+     
     }
 
     private Init(): void {
         Render.LayerMgr.getInstance().init();
+        console.log("定时调用一次");
     }
 
 
@@ -27,15 +31,15 @@ class GameMain {
         this.gamePage = new ui.GameUI();
         this.game = new Game();
         Laya.stage.addChild(this.bgPage);
-        this.Oninit(this.bgPage);
+        // this.Oninit(this.bgPage);
     }
 
-    private Oninit(itemdata: ui.GameStartUI): void {
-        itemdata.BtnStart.on(Laya.Event.CLICK, this, this.OnBtnStartClick);
-    }
+    // private Oninit(itemdata: ui.GameStartUI): void {
+    //     itemdata.BtnStart.on(Laya.Event.CLICK, this, this.OnBtnStartClick);
+    // }
 
-    private OnBtnStartClick(): void {
-        this.game.InitGame(this.gamePage, this.bgPage);
-    }
+    // private OnBtnStartClick(): void {
+    //     this.game.InitGame(this.gamePage, this.bgPage);
+    // }
 }
 new GameMain();
