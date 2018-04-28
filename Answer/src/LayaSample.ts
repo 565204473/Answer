@@ -17,12 +17,6 @@ class GameMain {
      
     }
 
-    private Init(): void {
-        Render.LayerMgr.getInstance().init();
-        console.log("定时调用一次");
-    }
-
-
     public gamePage: ui.GameUI;
     private bgPage: ui.GameStartUI;
     public game: Game;
@@ -31,7 +25,6 @@ class GameMain {
         this.gamePage = new ui.GameUI();
         this.game = new Game();
         Laya.stage.addChild(this.bgPage);
-        // this.Oninit(this.bgPage);
     }
 
     // private Oninit(itemdata: ui.GameStartUI): void {

@@ -2,8 +2,8 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":7,
-    "props":{"width":1280,"sceneColor":"#000000","height":720},
+    "selecteID":14,
+    "props":{"width":1280,"sceneColor":"#414c70","height":720},
     "nodeParent":-1,
     "label":"View",
     "isOpen":true,
@@ -42,7 +42,7 @@
         {
             "x":15,
             "type":"Button",
-            "props":{"y":623,"x":499,"width":177,"stateNum":"1","skin":"comp/common049.png","label":"label","height":39},
+            "props":{"y":8,"x":984,"width":177,"stateNum":"1","skin":"comp/common049.png","label":"label","height":39},
             "nodeParent":1,
             "label":"Button",
             "isDirectory":false,
@@ -56,7 +56,7 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":178,"x":808,"skin":"comp/image.png"},
+            "props":{"y":468,"x":944,"skin":"comp/image.png"},
             "nodeParent":1,
             "label":"Image",
             "isDirectory":false,
@@ -69,7 +69,7 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":178,"x":301,"skin":"comp/image.png"},
+            "props":{"y":3,"x":195,"skin":"comp/image.png"},
             "nodeParent":1,
             "label":"Image",
             "isOpen":true,
@@ -77,6 +77,110 @@
             "isAniNode":true,
             "hasChild":false,
             "compId":6,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Button",
+            "props":{"y":577,"x":16,"width":131,"var":"BtnAdd","stateNum":"1","skin":"comp/ImgAdd.jpg","height":137},
+            "nodeParent":1,
+            "label":"Button(BtnAdd)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":8,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Button",
+            "props":{"y":577,"x":157,"var":"BtnReduction","stateNum":"1","skin":"comp/ImgReduction.png"},
+            "nodeParent":1,
+            "label":"Button(BtnReduction)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":9,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Button",
+            "props":{"y":577,"x":310,"var":"BtnTake","stateNum":"1","skin":"comp/ImgTake.png"},
+            "nodeParent":1,
+            "label":"Button(BtnTake)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":10,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Button",
+            "props":{"y":267,"x":825,"var":"BtnEtc","stateNum":"1","skin":"comp/ImgETC.jpg"},
+            "nodeParent":1,
+            "label":"Button(BtnEtc)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":11,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Image",
+            "props":{"y":263,"x":435,"skin":"comp/ImgAdd.jpg"},
+            "nodeParent":1,
+            "label":"Image",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":12,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Label",
+            "props":{"y":303,"x":216,"width":188,"var":"TxtLeft","text":"1","height":79,"fontSize":50,"font":"Arial","color":"#f3e7e7"},
+            "nodeParent":1,
+            "label":"Label(TxtLeft)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":13,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Label",
+            "props":{"y":304,"x":654,"var":"RightTxt","text":"2","fontSize":50,"font":"Arial","color":"#f11713"},
+            "nodeParent":1,
+            "label":"Label(RightTxt)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":14,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Text",
+            "props":{"y":314,"x":1051,"var":"TxtEtc","text":"text","fontSize":50,"font":"Arial"},
+            "nodeParent":1,
+            "label":"Text(TxtEtc)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":15,
             "child":[
                 ]
         }],

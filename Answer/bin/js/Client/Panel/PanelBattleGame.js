@@ -19,6 +19,8 @@ var UI;
         }
         PanelBattleGame.prototype.OnInit = function () {
             _super.prototype.OnInit.call(this);
+            Gameplay.GetInstance().InitData();
+            this.InitData();
         };
         // public TryShow() {
         //     if (!this.isLoading) {
@@ -30,6 +32,13 @@ var UI;
         //         }
         //     }
         // }
+        PanelBattleGame.prototype.InitData = function () {
+            this.panelData = Gameplay.GetInstance().GetSubData(0);
+            if (this.panelData != null) {
+                this.view.TxtLeft.text = this.panelData.leftNumber.toString();
+                this.view.RightTxt.text = this.panelData.rightNumber.toString();
+            }
+        };
         PanelBattleGame.prototype.Update = function (deltaTime) {
         };
         return PanelBattleGame;

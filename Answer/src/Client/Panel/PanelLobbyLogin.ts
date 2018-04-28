@@ -30,7 +30,6 @@ namespace UI {
         }
 
         private OnBtnStartClick(): void {
-            console.log("开始游戏");
             UI.UIMgr.GetInstance().Hide(UI.LOBBY_LOGIN);
             UI.UIMgr.GetInstance().Show(UI.LOBBY_GAME, Scope.Battle);
         }
