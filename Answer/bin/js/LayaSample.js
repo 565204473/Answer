@@ -15,16 +15,11 @@ var GameMain = /** @class */ (function () {
         Render.LayerMgr.getInstance().init();
         UI.UIMgr.GetInstance().Show(UI.LOBBY_LOGIN, UI.Scope.Login);
     }
-    GameMain.prototype.Init = function () {
-        Render.LayerMgr.getInstance().init();
-        console.log("定时调用一次");
-    };
     GameMain.prototype.onloaded = function () {
         this.bgPage = new ui.GameStartUI();
         this.gamePage = new ui.GameUI();
         this.game = new Game();
         Laya.stage.addChild(this.bgPage);
-        // this.Oninit(this.bgPage);
     };
     return GameMain;
 }());

@@ -12,9 +12,19 @@ var SubtractingType;
 var Gameplay = /** @class */ (function () {
     function Gameplay() {
         this.lsSub = new List();
+        this.jsonPath = "res/Gamejson/Answer.json";
         this.data = new SubtracingData();
+        Laya.loader.load(this.jsonPath, Laya.Handler.create(this, this.OnLoaded), null, Laya.Loader.JSON);
         this.InitData();
     }
+    Gameplay.prototype.OnLoaded = function () {
+        var json = Laya.loader.getRes(this.jsonPath);
+        var str = JSON.stringify(json);
+        for (var i = 0; i < 4; i++) {
+            console.log(json[0] + "json数据" + i);
+        }
+        console.log(json[1]);
+    };
     Gameplay.prototype.InitData = function () {
         this.lsSub.Clear();
         for (var index = 0; index < 2; index++) {
@@ -23,7 +33,6 @@ var Gameplay = /** @class */ (function () {
             this.data.rightNumber = index + 1;
             this.lsSub.Add(this.data);
         }
-        console.log(this.lsSub.Count() + "添加的数据");
         for (var index = 0; index < this.lsSub.Count(); index++) {
             console.log(this.lsSub.GetItem(index).leftNumber + "###");
             console.log(this.lsSub.GetItem(index).rightNumber + "###");

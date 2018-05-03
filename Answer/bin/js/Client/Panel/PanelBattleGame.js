@@ -22,16 +22,6 @@ var UI;
             Gameplay.GetInstance().InitData();
             this.InitData();
         };
-        // public TryShow() {
-        //     if (!this.isLoading) {
-        //         this.Show();
-        //     } else {
-        //         if (!this.isPendingShow) {
-        //             this.isPendingShow = true;
-        //             Laya.loader.load(this.assetArr, Laya.Handler.create(this, this.OnLoad));
-        //         }
-        //     }
-        // }
         PanelBattleGame.prototype.InitData = function () {
             this.panelData = Gameplay.GetInstance().GetSubData(0);
             if (this.panelData != null) {
