@@ -37,7 +37,6 @@ var UI;
         PanelLobbyLogin.prototype.Update = function (deltaTime) {
         };
         PanelLobbyLogin.prototype.OnBtnStartClick = function () {
-            console.log("开始游戏");
             UI.UIMgr.GetInstance().Hide(UI.LOBBY_LOGIN);
             UI.UIMgr.GetInstance().Show(UI.LOBBY_GAME, UI.Scope.Battle);
         };

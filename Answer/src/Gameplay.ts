@@ -3,9 +3,21 @@ class Gameplay {
 
     private lsSub: List<SubtracingData> = new List<SubtracingData>();
     private data: SubtracingData;
+    private jsonPath: string = "res/Gamejson/Answer.json";
     constructor() {
         this.data = new SubtracingData();
+        Laya.loader.load(this.jsonPath, Laya.Handler.create(this, this.OnLoaded), null, Laya.Loader.JSON);
         this.InitData();
+    }
+
+    private OnLoaded(): void {
+        var json: JSON = Laya.loader.getRes(this.jsonPath);
+        var str: String = JSON.stringify(json);
+        for (let i = 0; i < 4; i++) {
+            console.log(json[0] + "json数据" + i);
+        }
+
+        console.log(json[1]);
     }
 
     public InitData(): void {
