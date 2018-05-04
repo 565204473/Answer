@@ -19,14 +19,16 @@ var UI;
         }
         PanelBattleGame.prototype.OnInit = function () {
             _super.prototype.OnInit.call(this);
-            Gameplay.GetInstance().InitData();
             this.InitData();
         };
         PanelBattleGame.prototype.InitData = function () {
             this.panelData = Gameplay.GetInstance().GetSubData(0);
+            var spriptImg = new Laya.Sprite();
             if (this.panelData != null) {
                 this.view.TxtLeft.text = this.panelData.leftNumber.toString();
                 this.view.RightTxt.text = this.panelData.rightNumber.toString();
+                this.view.TxtEtc.text = this.panelData.countNumber.toString();
+                this.view.ImgType.skin = SubtracingTypeHelp.TypeMinus;
             }
         };
         PanelBattleGame.prototype.Update = function (deltaTime) {

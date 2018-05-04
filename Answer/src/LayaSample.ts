@@ -13,6 +13,7 @@ class GameMain {
         // Laya.loader.load([{ url: "res/atlas/comp.atlas" }], Laya.Handler.create(this, this.onloaded));
        // Laya.timer.frameOnce(1, this, this.Init);
         Render.LayerMgr.getInstance().init();
+        Gameplay.GetInstance().OnInit();
         UI.UIMgr.GetInstance().Show(UI.LOBBY_LOGIN, UI.Scope.Login);
      
     }

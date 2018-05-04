@@ -2,7 +2,7 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":14,
+    "selecteID":12,
     "props":{"width":1280,"sceneColor":"#414c70","height":720},
     "nodeParent":-1,
     "label":"View",
@@ -15,7 +15,7 @@
         {
             "x":15,
             "type":"Button",
-            "props":{"y":607,"x":1173,"width":40,"var":"BtnClose","stateNum":"1","skin":"comp/common009.png","sizeGrid":"0,0,0,0","name":"BtnClose","height":40},
+            "props":{"y":12,"x":1233,"width":40,"var":"BtnClose","stateNum":"1","skin":"comp/common009.png","sizeGrid":"0,0,0,0","name":"BtnClose","height":40},
             "nodeParent":1,
             "label":"Button(BtnClose)",
             "isDirectory":false,
@@ -38,20 +38,6 @@
             "compId":2,
             "child":[
                 ]
-        },
-        {
-            "x":15,
-            "type":"Button",
-            "props":{"y":8,"x":984,"width":177,"stateNum":"1","skin":"comp/common049.png","label":"label","height":39},
-            "nodeParent":1,
-            "label":"Button",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "compId":5,
-            "child":[
-                ],
-            "$HIDDEN":false
         },
         {
             "x":15,
@@ -135,9 +121,9 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":263,"x":435,"skin":"comp/ImgAdd.jpg"},
+            "props":{"y":263,"x":435,"var":"ImgType","skin":"comp/ImgAdd.jpg"},
             "nodeParent":1,
-            "label":"Image",
+            "label":"Image(ImgType)",
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
@@ -174,7 +160,7 @@
         {
             "x":15,
             "type":"Text",
-            "props":{"y":314,"x":1051,"var":"TxtEtc","text":"text","fontSize":50,"font":"Arial"},
+            "props":{"y":314,"x":1051,"var":"TxtEtc","text":"11","fontSize":50,"font":"Arial","color":"#f6f6f6"},
             "nodeParent":1,
             "label":"Text(TxtEtc)",
             "isDirectory":false,
