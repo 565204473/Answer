@@ -1,5 +1,6 @@
-//¼Ó¼õ³Ë³ý
+
 enum SubtractingType {
+    None,
     Add, //+  
     Minus, //-
     ride, //*
@@ -13,7 +14,6 @@ class SubtracingData {
     public rightNumber: number;
     public countNumber: number;
     public type :SubtractingType;
-    public type:SubtractingType;
     constructor() {
         this.id=0;
         this.leftNumber = 0;

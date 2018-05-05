@@ -1,4 +1,3 @@
-    None = 0,
 class Gameplay {
     private lsSub: List<SubtracingData> = new List<SubtracingData>();
     private jsonPath: string = "res/Gamejson/Answer.json";
