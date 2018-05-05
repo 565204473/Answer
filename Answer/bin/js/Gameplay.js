@@ -31,11 +31,9 @@ var Gameplay = /** @class */ (function () {
             subtracingData.rightNumber = json[i]["right"];
             subtracingData.countNumber = json[i]["sum"];
             this.lsSub.Add(subtracingData);
-            console.log("???***+++");
         }
     };
     Gameplay.prototype.GetSubData = function (index) {
-        console.log(this.lsSub.Count + "***+++");
         return this.lsSub.GetItem(index);
     };
     Gameplay.GetInstance = function () {

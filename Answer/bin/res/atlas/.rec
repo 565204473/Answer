@@ -20,10 +20,11 @@ P E466EB1C hslider$bar.png
 P C4BECA54 hslider.png
 P 5EDC128C html.png
 P ACFFCCCF image.png
-P 8FAE15D2 ImgAdd.jpg
+R C5D58F3F ImgAdd.jpg
 P 390281B1 ImgETC.jpg
-P 60A69AF9 ImgReduction.png
-P 6C68A180 ImgTake.png
+R D9A3EAD8 ImgInAdd.jpg
+R 85C2C6A8 ImgReduction.jpg
+R 9E617492 ImgTake.jpg
 P 5EDC128C label.png
 P 5EDC128C linkbutton.png
 P 9E4DD730 progress$bar.png

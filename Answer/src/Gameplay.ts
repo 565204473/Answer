@@ -36,13 +36,11 @@ class Gameplay {
             subtracingData.rightNumber = json[i]["right"];
             subtracingData.countNumber=json[i]["sum"];
             this.lsSub.Add(subtracingData);
-            console.log("???***+++");
         }
 
     }
 
     public GetSubData(index: number): SubtracingData {
-        console.log(this.lsSub.Count + "***+++");
         return this.lsSub.GetItem(index);
     }
 
