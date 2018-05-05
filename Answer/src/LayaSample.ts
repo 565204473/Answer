@@ -13,6 +13,7 @@ class GameMain {
         // Laya.loader.load([{ url: "res/atlas/comp.atlas" }], Laya.Handler.create(this, this.onloaded));
        // Laya.timer.frameOnce(1, this, this.Init);
         Render.LayerMgr.getInstance().init();
+        Gameplay.GetInstance().OnInit();
         UI.UIMgr.GetInstance().Show(UI.LOBBY_LOGIN, UI.Scope.Login);
      
     }
@@ -26,13 +27,5 @@ class GameMain {
         this.game = new Game();
         Laya.stage.addChild(this.bgPage);
     }
-
-    // private Oninit(itemdata: ui.GameStartUI): void {
-    //     itemdata.BtnStart.on(Laya.Event.CLICK, this, this.OnBtnStartClick);
-    // }
-
-    // private OnBtnStartClick(): void {
-    //     this.game.InitGame(this.gamePage, this.bgPage);
-    // }
 }
 new GameMain();
