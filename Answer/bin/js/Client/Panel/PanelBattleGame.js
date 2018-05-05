@@ -19,6 +19,7 @@ var UI;
         }
         PanelBattleGame.prototype.OnInit = function () {
             _super.prototype.OnInit.call(this);
+            this.index = 0;
             this.view.BtnAdd.on(Laya.Event.CLICK, this, this.OnBtnAddClick);
             this.view.BtnReduction.on(Laya.Event.CLICK, this, this.OnBtnMinusClick);
             this.view.BtnTake.on(Laya.Event.CLICK, this, this.OnBtnRideClick);
@@ -28,28 +29,39 @@ var UI;
         PanelBattleGame.prototype.Update = function (deltaTime) {
         };
         PanelBattleGame.prototype.InitData = function () {
-            this.panelData = Gameplay.GetInstance().GetSubData(0);
+            this.OnRefreshViewData(SubtractingType.None, this.index);
+        };
+        PanelBattleGame.prototype.OnRefreshViewData = function (type, index) {
+            this.panelData = Gameplay.GetInstance().GetSubData(index);
             var spriptImg = new Laya.Sprite();
             if (this.panelData != null) {
                 this.view.TxtLeft.text = this.panelData.leftNumber.toString();
                 this.view.RightTxt.text = this.panelData.rightNumber.toString();
                 this.view.TxtEtc.text = this.panelData.countNumber.toString();
+                if (type == this.panelData.type) {
+                    console.log("正确");
+                    this.OnRefreshView(SubtractingType.None, this.index += 1);
+                }
+                else {
+                    console.log("错误");
+                }
             }
         };
-        PanelBattleGame.prototype.OnRefreshView = function (type) {
+        PanelBattleGame.prototype.OnRefreshView = function (type, index) {
             this.view.ImgType.skin = SubtracingTypeHelp.GetSubtracingType(type);
+            this.OnRefreshViewData(type, index);
         };
         PanelBattleGame.prototype.OnBtnAddClick = function () {
-            this.OnRefreshView(SubtractingType.Add);
+            this.OnRefreshView(SubtractingType.Add, this.index);
         };
         PanelBattleGame.prototype.OnBtnMinusClick = function () {
-            this.OnRefreshView(SubtractingType.Minus);
+            this.OnRefreshView(SubtractingType.Minus, this.index);
         };
         PanelBattleGame.prototype.OnBtnRideClick = function () {
-            this.OnRefreshView(SubtractingType.ride);
+            this.OnRefreshView(SubtractingType.ride, this.index);
         };
         PanelBattleGame.prototype.OnBtnInAddClick = function () {
-            this.OnRefreshView(SubtractingType.InAdd);
+            this.OnRefreshView(SubtractingType.InAdd, this.index);
         };
         return PanelBattleGame;
     }(UI.BasePanel));
