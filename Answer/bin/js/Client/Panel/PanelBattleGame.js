@@ -26,6 +26,10 @@ var UI;
             this.view.BtnInAdd.on(Laya.Event.CLICK, this, this.OnBtnInAddClick);
             this.InitData();
         };
+        PanelBattleGame.prototype.OnHide = function () {
+            _super.prototype.OnHide.call(this);
+            this.isLoading = false;
+        };
         PanelBattleGame.prototype.Update = function (deltaTime) {
         };
         PanelBattleGame.prototype.InitData = function () {
@@ -44,6 +48,10 @@ var UI;
                 }
                 else {
                     console.log("错误");
+                    if (type != SubtractingType.None) {
+                        UI.UIMgr.GetInstance().Hide(UI.LOBBY_GAME);
+                        UI.UIMgr.GetInstance().Show(UI.LOBBY_BATTLE_END, UI.Scope.BattleEnd);
+                    }
                 }
             }
         };

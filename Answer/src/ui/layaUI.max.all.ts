@@ -28,6 +28,23 @@ module ui {
 }
 
 module ui {
+    export class GameEndUI extends View {
+		public BtnOpenGame:Laya.Button;
+
+        public static  uiView:any ={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Text","props":{"y":265,"x":490,"text":"我是结算界面","fontSize":40,"font":"Arial","color":"#ead1d1"}},{"type":"Button","props":{"y":386,"x":529,"width":161,"var":"BtnOpenGame","skin":"comp/button.png","labelStrokeColor":"#e2120f","labelSize":20,"labelFont":"Arial","label":"重新开始","height":58}}]};
+        constructor(){ super()}
+        createChildren():void {
+        			View.regComponent("Text",laya.display.Text);
+
+            super.createChildren();
+            this.createView(ui.GameEndUI.uiView);
+
+        }
+
+    }
+}
+
+module ui {
     export class GameStartUI extends View {
 		public ImgBg:Laya.Image;
 		public BtnStart:Laya.Button;

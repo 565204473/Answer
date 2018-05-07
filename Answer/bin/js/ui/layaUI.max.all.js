@@ -28,6 +28,22 @@ var ui;
     ui.GameUI = GameUI;
 })(ui || (ui = {}));
 (function (ui) {
+    var GameEndUI = /** @class */ (function (_super) {
+        __extends(GameEndUI, _super);
+        function GameEndUI() {
+            return _super.call(this) || this;
+        }
+        GameEndUI.prototype.createChildren = function () {
+            View.regComponent("Text", laya.display.Text);
+            _super.prototype.createChildren.call(this);
+            this.createView(ui.GameEndUI.uiView);
+        };
+        GameEndUI.uiView = { "type": "View", "props": { "width": 1280, "height": 720 }, "child": [{ "type": "Text", "props": { "y": 265, "x": 490, "text": "我是结算界面", "fontSize": 40, "font": "Arial", "color": "#ead1d1" } }, { "type": "Button", "props": { "y": 386, "x": 529, "width": 161, "var": "BtnOpenGame", "skin": "comp/button.png", "labelStrokeColor": "#e2120f", "labelSize": 20, "labelFont": "Arial", "label": "重新开始", "height": 58 } }] };
+        return GameEndUI;
+    }(View));
+    ui.GameEndUI = GameEndUI;
+})(ui || (ui = {}));
+(function (ui) {
     var GameStartUI = /** @class */ (function (_super) {
         __extends(GameStartUI, _super);
         function GameStartUI() {

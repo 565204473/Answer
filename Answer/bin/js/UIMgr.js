@@ -27,12 +27,15 @@ var UI;
             return this.lstUI.Item(ui);
         };
         UIMgr.prototype.Show = function (id, scope) {
+            console.log("面板***");
             if (this.lstUI.ContainsKey(id)) {
                 var panel = this.lstUI.Item(id);
+                console.log("面板名字" + panel.IsLoading());
                 if (panel.IsLoading()) {
                     return;
                 }
-                if (!panel.IsVisible) {
+                console.log("面板名字&&&" + panel.IsVisible);
+                if (!panel.IsVisible()) {
                     panel.Show();
                 }
                 panel.BringToTop();
@@ -50,6 +53,7 @@ var UI;
                         panel = new UI.PanelBattleGame(parent_1, ui.GameUI);
                         break;
                     case UI.LOBBY_BATTLE_END:
+                        panel = new UI.PanelGameEnd(parent_1, ui.GameEndUI);
                         break;
                 }
                 if (panel != null) {

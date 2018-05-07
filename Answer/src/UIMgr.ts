@@ -20,8 +20,8 @@ namespace UI {
             this.dicScope.Add(Scope.Lobby, new List<IUI>());
             this.dicScope.Add(Scope.Battle, new List<IUI>());
             this.dicScope.Add(Scope.BattleEnd, new List<IUI>());
-        
-            console.log("先走构造"+this.dicScope[Scope.Battle]);
+
+            console.log("先走构造" + this.dicScope[Scope.Battle]);
 
         }
 
@@ -40,7 +40,7 @@ namespace UI {
                 if (panel.IsLoading()) {
                     return;
                 }
-                if (!panel.IsVisible) {
+                if (!panel.IsVisible()) {                 
                     panel.Show();
                 }
                 panel.BringToTop();
@@ -50,14 +50,13 @@ namespace UI {
                 let parent: Laya.Component = Render.LayerMgr.getInstance().GetUINode();
                 switch (id) {
                     case LOBBY_LOGIN:
-                        console.log("***" + parent);
                         panel = new PanelLobbyLogin(parent, ui.GameStartUI);
                         break;
                     case LOBBY_GAME:
                         panel = new PanelBattleGame(parent, ui.GameUI);
                         break;
                     case LOBBY_BATTLE_END:
-
+                        panel = new PanelGameEnd(parent, ui.GameEndUI);
                         break;
                 }
 
@@ -66,8 +65,7 @@ namespace UI {
                     panel.id = id;
                     this.lstUI.Add(id, panel);
                     if (scope != Scope.Global) {
-                        console.log("面板名字" + this.dicScope[scope]);                      
-                        this.dicScope.Item(scope).Add(panel);                  
+                        this.dicScope.Item(scope).Add(panel);
                     }
                 }
             }
@@ -144,7 +142,6 @@ namespace UI {
 
         private static _instance: UIMgr;
         public static GetInstance() {
-
             UIMgr._instance = UIMgr._instance || new UIMgr();
             return UIMgr._instance;
         }

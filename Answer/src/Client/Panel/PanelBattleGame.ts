@@ -17,6 +17,11 @@ namespace UI {
             this.InitData();
         }
 
+        public OnHide() {
+            super.OnHide();
+            this.isLoading = false;
+        }
+
         public Update(deltaTime: number): void {
 
         }
@@ -39,7 +44,10 @@ namespace UI {
                 } else {
 
                     console.log("错误");
-
+                    if (type != SubtractingType.None) {
+                        UI.UIMgr.GetInstance().Hide(UI.LOBBY_GAME);
+                        UI.UIMgr.GetInstance().Show(UI.LOBBY_BATTLE_END, Scope.BattleEnd);
+                    }
                 }
             }
         }
