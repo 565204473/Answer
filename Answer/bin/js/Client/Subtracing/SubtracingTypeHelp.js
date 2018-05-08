@@ -4,8 +4,8 @@ var SubtracingTypeHelp = /** @class */ (function () {
     SubtracingTypeHelp.GetSubtracingType = function (type) {
         var typeString;
         switch (type) {
-            case SubtractingType.None: //默认选择的图片 ，找到？号在换掉
-                typeString = "comp/ImgETC.jpg";
+            case SubtractingType.None://默认选择的图片 ，找到？号在换掉
+                typeString = "comp/ImgDef.png";
                 break;
             case SubtractingType.Add:
                 typeString = "comp/ImgAdd.jpg";

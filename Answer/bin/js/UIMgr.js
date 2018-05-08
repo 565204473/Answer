@@ -18,7 +18,6 @@ var UI;
             this.dicScope.Add(Scope.Lobby, new List());
             this.dicScope.Add(Scope.Battle, new List());
             this.dicScope.Add(Scope.BattleEnd, new List());
-            console.log("先走构造" + this.dicScope[Scope.Battle]);
         }
         UIMgr.prototype.GetNextZOrder = function () {
             return ++this.zOrderIndex;
@@ -27,14 +26,11 @@ var UI;
             return this.lstUI.Item(ui);
         };
         UIMgr.prototype.Show = function (id, scope) {
-            console.log("面板***");
             if (this.lstUI.ContainsKey(id)) {
                 var panel = this.lstUI.Item(id);
-                console.log("面板名字" + panel.IsLoading());
                 if (panel.IsLoading()) {
                     return;
                 }
-                console.log("面板名字&&&" + panel.IsVisible);
                 if (!panel.IsVisible()) {
                     panel.Show();
                 }
@@ -46,7 +42,6 @@ var UI;
                 var parent_1 = Render.LayerMgr.getInstance().GetUINode();
                 switch (id) {
                     case UI.LOBBY_LOGIN:
-                        console.log("***" + parent_1);
                         panel = new UI.PanelLobbyLogin(parent_1, ui.GameStartUI);
                         break;
                     case UI.LOBBY_GAME:
@@ -61,7 +56,6 @@ var UI;
                     panel.id = id;
                     this.lstUI.Add(id, panel);
                     if (scope != Scope.Global) {
-                        console.log("面板名字" + this.dicScope[scope]);
                         this.dicScope.Item(scope).Add(panel);
                     }
                 }

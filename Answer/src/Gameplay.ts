@@ -1,12 +1,14 @@
 class Gameplay {
     private lsSub: List<SubtracingData> = new List<SubtracingData>();
     private jsonPath: string = "res/Gamejson/Answer.json";
+    private times: number;
+    private indexCount: number;
     constructor() {
-
+        this.times = 0;
+        this.indexCount = 0;
     }
 
-    public OnInit(): void
-     {
+    public OnInit(): void {
         Laya.loader.load(this.jsonPath, Laya.Handler.create(this, this.OnLoaded), null, Laya.Loader.JSON);
     }
 
@@ -21,7 +23,7 @@ class Gameplay {
             subtracingData.type = json[i]["SubtractingType"];
             subtracingData.leftNumber = json[i]["left"];
             subtracingData.rightNumber = json[i]["right"];
-            subtracingData.countNumber=json[i]["sum"];
+            subtracingData.countNumber = json[i]["sum"];
             this.lsSub.Add(subtracingData);
         }
 
@@ -31,7 +33,22 @@ class Gameplay {
         return this.lsSub.GetItem(index);
     }
 
+    public SetTimes(timess: number): void {
+        this.times = timess;
+    }
 
+    public GetTimes(): Number {
+        let count = (this.times / 100);
+        return count;
+    }
+
+    public SetIndexCount(index: number): void {
+        this.indexCount = index;
+    }
+
+    public GetIndexCount(): Number {
+        return this.indexCount;
+    }
     //单例
     private static _instance: Gameplay;
     public static GetInstance() {

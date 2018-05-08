@@ -2,7 +2,7 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":12,
+    "selecteID":17,
     "props":{"width":1280,"sceneColor":"#414c70","height":720},
     "nodeParent":-1,
     "label":"View",
@@ -93,7 +93,7 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":263,"x":435,"var":"ImgType","skin":"comp/ImgAdd.png"},
+            "props":{"y":263,"x":435,"var":"ImgType","skin":"comp/ImgDef.png"},
             "nodeParent":1,
             "label":"Image(ImgType)",
             "isDirectory":false,
@@ -152,6 +152,19 @@
             "isAniNode":true,
             "hasChild":false,
             "compId":16,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Text",
+            "props":{"y":59,"x":522,"var":"TxtTimes","text":"开始计时：10","fontSize":50,"font":"Arial","color":"#ee1916"},
+            "nodeParent":1,
+            "label":"Text(TxtTimes)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":17,
             "child":[
                 ]
         }],

@@ -11,21 +11,17 @@ class GameMain {
         //设置垂直对齐
         Laya.stage.alignV = Laya.Stage.ALIGN_MIDDLE;
         // Laya.loader.load([{ url: "res/atlas/comp.atlas" }], Laya.Handler.create(this, this.onloaded));
-       // Laya.timer.frameOnce(1, this, this.Init);
+        // Laya.timer.frameOnce(1, this, this.Init);
         Render.LayerMgr.getInstance().init();
         Gameplay.GetInstance().OnInit();
         UI.UIMgr.GetInstance().Show(UI.LOBBY_LOGIN, UI.Scope.Login);
-     
+        Laya.timer.frameLoop(1, this, this.Update);
+
     }
 
-    public gamePage: ui.GameUI;
-    private bgPage: ui.GameStartUI;
-    public game: Game;
-    private onloaded(): void {
-        this.bgPage = new ui.GameStartUI();
-        this.gamePage = new ui.GameUI();
-        this.game = new Game();
-        Laya.stage.addChild(this.bgPage);
+    private Update(): void {
+        let timeElapse = Laya.timer.delta;
+        UI.UIMgr.GetInstance().Update(timeElapse);
     }
 }
 new GameMain();

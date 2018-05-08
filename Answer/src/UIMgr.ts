@@ -20,9 +20,6 @@ namespace UI {
             this.dicScope.Add(Scope.Lobby, new List<IUI>());
             this.dicScope.Add(Scope.Battle, new List<IUI>());
             this.dicScope.Add(Scope.BattleEnd, new List<IUI>());
-
-            console.log("先走构造" + this.dicScope[Scope.Battle]);
-
         }
 
         public GetNextZOrder(): number {

@@ -7,23 +7,39 @@ namespace UI {
 
         private panelData: SubtracingData;
         private index: number;
+        private time: number = 0;
+        private isStatrt: boolean = true;
         public OnInit() {
             super.OnInit();
-            this.index = 0;
             this.view.BtnAdd.on(Laya.Event.CLICK, this, this.OnBtnAddClick);
             this.view.BtnReduction.on(Laya.Event.CLICK, this, this.OnBtnMinusClick);
             this.view.BtnTake.on(Laya.Event.CLICK, this, this.OnBtnRideClick);
             this.view.BtnInAdd.on(Laya.Event.CLICK, this, this.OnBtnInAddClick);
+
+        }
+
+        public OnShow() {
+            super.OnShow();
+            this.index = 0;
+            this.isStatrt = true;
             this.InitData();
         }
 
         public OnHide() {
             super.OnHide();
-            this.isLoading = false;
+            this.isStatrt = false;
+            this.time = 0;
         }
 
         public Update(deltaTime: number): void {
+            if (this.isStatrt) {
+                this.SetTxtTimesData((this.time += 1));
+            }
+        }
 
+        private SetTxtTimesData(times: number): void {
+            this.view.TxtTimes.text = "时间:" + times;
+            Gameplay.GetInstance().SetTimes(times);
         }
 
         private InitData(): void {
@@ -40,10 +56,13 @@ namespace UI {
                 this.view.TxtEtc.text = this.panelData.countNumber.toString();
                 if (type == this.panelData.type) {
                     console.log("正确");
-                    this.OnRefreshView(SubtractingType.None, this.index += 1);
+                    let indexCount = this.index += 1;
+                    this.OnRefreshView(SubtractingType.None, indexCount);
+                    Gameplay.GetInstance().SetIndexCount(indexCount);
                 } else {
 
                     console.log("错误");
+                    this.view.ImgType.skin = SubtracingTypeHelp.GetSubtracingType(SubtractingType.None);
                     if (type != SubtractingType.None) {
                         UI.UIMgr.GetInstance().Hide(UI.LOBBY_GAME);
                         UI.UIMgr.GetInstance().Show(UI.LOBBY_BATTLE_END, Scope.BattleEnd);

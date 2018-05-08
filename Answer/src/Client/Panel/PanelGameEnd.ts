@@ -18,6 +18,12 @@ namespace UI {
 
         public OnShow() {
             super.OnShow();
+            this.OnRefreshData();
+        }
+
+        private OnRefreshData(): void {
+            this.view.TxtTimer.text = "消耗时间：" + Gameplay.GetInstance().GetTimes().toString().substring(0, 1);
+            this.view.TxtIndexCount.text = "完成题数：" + Gameplay.GetInstance().GetIndexCount();
         }
 
         private OnOpenNewGame(): void {

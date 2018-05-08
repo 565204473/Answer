@@ -15,12 +15,11 @@ var GameMain = /** @class */ (function () {
         Render.LayerMgr.getInstance().init();
         Gameplay.GetInstance().OnInit();
         UI.UIMgr.GetInstance().Show(UI.LOBBY_LOGIN, UI.Scope.Login);
+        Laya.timer.frameLoop(1, this, this.Update);
     }
-    GameMain.prototype.onloaded = function () {
-        this.bgPage = new ui.GameStartUI();
-        this.gamePage = new ui.GameUI();
-        this.game = new Game();
-        Laya.stage.addChild(this.bgPage);
+    GameMain.prototype.Update = function () {
+        var timeElapse = Laya.timer.delta;
+        UI.UIMgr.GetInstance().Update(timeElapse);
     };
     return GameMain;
 }());
