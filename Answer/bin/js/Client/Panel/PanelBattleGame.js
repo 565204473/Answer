@@ -14,7 +14,7 @@ var UI;
         __extends(PanelBattleGame, _super);
         function PanelBattleGame(parent, viewType) {
             var _this = _super.call(this, parent, viewType) || this;
-            _this.time = 0;
+            _this.time = 1000;
             _this.isStatrt = true;
             _this.assetArr = [{ url: "res/atlas/comp.atlas" }];
             return _this;
@@ -30,21 +30,23 @@ var UI;
             _super.prototype.OnShow.call(this);
             this.index = 0;
             this.isStatrt = true;
+            Gameplay.GetInstance().ClearScore();
             this.InitData();
         };
         PanelBattleGame.prototype.OnHide = function () {
             _super.prototype.OnHide.call(this);
             this.isStatrt = false;
-            this.time = 0;
+            this.time = 1000;
         };
         PanelBattleGame.prototype.Update = function (deltaTime) {
             if (this.isStatrt) {
-                this.SetTxtTimesData((this.time += 1));
+                this.SetTxtTimesData((this.time -= 1));
             }
         };
         PanelBattleGame.prototype.SetTxtTimesData = function (times) {
             this.view.TxtTimes.text = "时间:" + times;
-            Gameplay.GetInstance().SetTimes(times);
+            console.log(intTimes - times);
+            Gameplay.GetInstance().SetTimes(intTimes - times);
         };
         PanelBattleGame.prototype.InitData = function () {
             this.OnRefreshViewData(SubtractingType.None, this.index);
@@ -56,14 +58,14 @@ var UI;
                 this.view.TxtLeft.text = this.panelData.leftNumber.toString();
                 this.view.RightTxt.text = this.panelData.rightNumber.toString();
                 this.view.TxtEtc.text = this.panelData.countNumber.toString();
+                this.view.TxtScore.text = "分数：" + Gameplay.GetInstance().GetScore();
                 if (type == this.panelData.type) {
-                    console.log("正确");
                     var indexCount = this.index += 1;
+                    Gameplay.GetInstance().SetScore();
                     this.OnRefreshView(SubtractingType.None, indexCount);
                     Gameplay.GetInstance().SetIndexCount(indexCount);
                 }
                 else {
-                    console.log("错误");
                     this.view.ImgType.skin = SubtracingTypeHelp.GetSubtracingType(SubtractingType.None);
                     if (type != SubtractingType.None) {
                         UI.UIMgr.GetInstance().Hide(UI.LOBBY_GAME);

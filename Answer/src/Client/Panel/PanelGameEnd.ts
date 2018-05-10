@@ -22,8 +22,9 @@ namespace UI {
         }
 
         private OnRefreshData(): void {
-            this.view.TxtTimer.text = "消耗时间：" + Gameplay.GetInstance().GetTimes().toString().substring(0, 1);
+            this.view.TxtTimer.text = "消耗时间：" + Gameplay.GetInstance().GetTimes().toString().substring(0, 1) + "秒";
             this.view.TxtIndexCount.text = "完成题数：" + Gameplay.GetInstance().GetIndexCount();
+            this.view.TxtScore.text = "分数：" + Gameplay.GetInstance().GetScore();
         }
 
         private OnOpenNewGame(): void {

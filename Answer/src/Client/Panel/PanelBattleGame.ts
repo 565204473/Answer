@@ -7,7 +7,7 @@ namespace UI {
 
         private panelData: SubtracingData;
         private index: number;
-        private time: number = 0;
+        private time: number = 1000;
         private isStatrt: boolean = true;
         public OnInit() {
             super.OnInit();
@@ -22,24 +22,26 @@ namespace UI {
             super.OnShow();
             this.index = 0;
             this.isStatrt = true;
+            Gameplay.GetInstance().ClearScore();
             this.InitData();
         }
 
         public OnHide() {
             super.OnHide();
             this.isStatrt = false;
-            this.time = 0;
+            this.time = 1000;
         }
 
         public Update(deltaTime: number): void {
             if (this.isStatrt) {
-                this.SetTxtTimesData((this.time += 1));
+                this.SetTxtTimesData((this.time -= 1));
             }
         }
 
         private SetTxtTimesData(times: number): void {
             this.view.TxtTimes.text = "时间:" + times;
-            Gameplay.GetInstance().SetTimes(times);
+            console.log(intTimes - times);
+            Gameplay.GetInstance().SetTimes(intTimes - times);
         }
 
         private InitData(): void {
@@ -54,14 +56,13 @@ namespace UI {
                 this.view.TxtLeft.text = this.panelData.leftNumber.toString();
                 this.view.RightTxt.text = this.panelData.rightNumber.toString();
                 this.view.TxtEtc.text = this.panelData.countNumber.toString();
+                this.view.TxtScore.text = "分数：" + Gameplay.GetInstance().GetScore();
                 if (type == this.panelData.type) {
-                    console.log("正确");
                     let indexCount = this.index += 1;
+                    Gameplay.GetInstance().SetScore();
                     this.OnRefreshView(SubtractingType.None, indexCount);
                     Gameplay.GetInstance().SetIndexCount(indexCount);
                 } else {
-
-                    console.log("错误");
                     this.view.ImgType.skin = SubtracingTypeHelp.GetSubtracingType(SubtractingType.None);
                     if (type != SubtractingType.None) {
                         UI.UIMgr.GetInstance().Hide(UI.LOBBY_GAME);

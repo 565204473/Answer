@@ -1,9 +1,12 @@
+var intTimes = 1000;
+var scoreConfig = 10;
 var Gameplay = /** @class */ (function () {
     function Gameplay() {
         this.lsSub = new List();
         this.jsonPath = "res/Gamejson/Answer.json";
         this.times = 0;
         this.indexCount = 0;
+        this.score = 0;
     }
     Gameplay.prototype.OnInit = function () {
         Laya.loader.load(this.jsonPath, Laya.Handler.create(this, this.OnLoaded), null, Laya.Loader.JSON);
@@ -12,7 +15,6 @@ var Gameplay = /** @class */ (function () {
         var json = Laya.loader.getRes(this.jsonPath);
         var str = JSON.stringify(json);
         for (var i = 0; i < 4; i++) {
-            console.log(json[i]);
             var subtracingData = new SubtracingData();
             subtracingData.id = json[i]["ID"];
             subtracingData.des = json[i]["Name"];
@@ -38,6 +40,15 @@ var Gameplay = /** @class */ (function () {
     };
     Gameplay.prototype.GetIndexCount = function () {
         return this.indexCount;
+    };
+    Gameplay.prototype.SetScore = function () {
+        this.score += scoreConfig;
+    };
+    Gameplay.prototype.GetScore = function () {
+        return this.score;
+    };
+    Gameplay.prototype.ClearScore = function () {
+        this.score = 0;
     };
     Gameplay.GetInstance = function () {
         Gameplay._instance = Gameplay._instance || new Gameplay();

@@ -2,7 +2,7 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":17,
+    "selecteID":18,
     "props":{"width":1280,"sceneColor":"#414c70","height":720},
     "nodeParent":-1,
     "label":"View",
@@ -165,6 +165,19 @@
             "isAniNode":true,
             "hasChild":false,
             "compId":17,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Text",
+            "props":{"y":130,"x":527,"var":"TxtScore","text":"分数:10","fontSize":50,"font":"Arial","color":"#fb0c08"},
+            "nodeParent":1,
+            "label":"Text(TxtScore)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":18,
             "child":[
                 ]
         }],

@@ -28,8 +28,9 @@ var UI;
             this.OnRefreshData();
         };
         PanelGameEnd.prototype.OnRefreshData = function () {
-            this.view.TxtTimer.text = "消耗时间：" + Gameplay.GetInstance().GetTimes().toString().substring(0, 1);
+            this.view.TxtTimer.text = "消耗时间：" + Gameplay.GetInstance().GetTimes().toString().substring(0, 1) + "秒";
             this.view.TxtIndexCount.text = "完成题数：" + Gameplay.GetInstance().GetIndexCount();
+            this.view.TxtScore.text = "分数：" + Gameplay.GetInstance().GetScore();
         };
         PanelGameEnd.prototype.OnOpenNewGame = function () {
             UI.UIMgr.GetInstance().Hide(UI.LOBBY_BATTLE_END);
