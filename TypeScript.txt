@@ -53,4 +53,6 @@ TypeScript ½Ó¿Ú
  let ro£ºReadonlyArray<number>=a;
  a=ro as number[];
  
+ 4£º·ºÐÍ
+ 
  
