@@ -32,6 +32,7 @@ namespace UI {
         private OnBtnStartClick(): void {
             UI.UIMgr.GetInstance().Hide(UI.LOBBY_LOGIN);
             UI.UIMgr.GetInstance().Show(UI.LOBBY_GAME, Scope.Battle);
+            Res.ResTest.GetInstance().LoadJson();
         }
     }
 

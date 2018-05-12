@@ -1,14 +1,13 @@
-module Res {
-    export class ResMgr {
-        private assetCache: AssetCacheCenter;
-        private dicResEntity: { [path: string]: ResEntity } = {};
-        constructor() {
-            this.assetCache = new AssetCacheCenter();
+var Res;
+(function (Res) {
+    var ResMgr = /** @class */ (function () {
+        function ResMgr() {
+            this.dicResEntity = {};
+            this.assetCache = new Res.AssetCacheCenter();
         }
-
-        public GetResAsync(path: string, type: AssetType, complete: Laya.Handler): number {
-            let loadId = this.assetCache.LoadAsset(path, type, Laya.Handler.create(this, function (asset: Asset): void {
-                let obj = null;
+        ResMgr.prototype.GetResAsync = function (path, type, complete) {
+            var loadId = this.assetCache.LoadAsset(path, type, Laya.Handler.create(this, function (asset) {
+                var obj = null;
                 if (null != asset) {
                     obj = asset.GetAsset();
                     this.AddReferenceNumber(obj, path);
@@ -16,9 +15,8 @@ module Res {
                 complete.runWith(obj);
             }));
             return loadId;
-        }
-
-        private GetResPath(obj: any): string {
+        };
+        ResMgr.prototype.GetResPath = function (obj) {
             for (var key in this.dicResEntity) {
                 if (this.dicResEntity[key].HasRes(obj)) {
                     return key;
@@ -26,23 +24,21 @@ module Res {
             }
             console.error("this asset object not find:", obj);
             return undefined;
-        }
-
-        private AddReferenceNumber(obj: any, path: string): void {
-            let entity: ResEntity = this.dicResEntity[path];
+        };
+        ResMgr.prototype.AddReferenceNumber = function (obj, path) {
+            var entity = this.dicResEntity[path];
             if (undefined == entity) {
-                entity = new ResEntity();
+                entity = new Res.ResEntity();
                 this.dicResEntity[path] = entity;
             }
             entity.AddReference(obj);
-        }
-
-        private RemoveReferenceNumber(obj: any): boolean {
-            let path: string = this.GetResPath(obj);
+        };
+        ResMgr.prototype.RemoveReferenceNumber = function (obj) {
+            var path = this.GetResPath(obj);
             if (undefined == path) {
                 return false;
             }
-            let entity: ResEntity = this.dicResEntity[path];
+            var entity = this.dicResEntity[path];
             if (entity.RemoveReference(obj)) {
                 if (entity.Count <= 0) {
                     delete this.dicResEntity[path];
@@ -50,9 +46,8 @@ module Res {
                 }
             }
             return true;
-        }
-
-        public RecycleRes(obj: any) {
+        };
+        ResMgr.prototype.RecycleRes = function (obj) {
             if (null == obj || undefined == obj) {
                 return false;
             }
@@ -60,20 +55,19 @@ module Res {
             if (obj instanceof Laya.Sprite3D || obj instanceof Laya.Scene) {
                 obj.destroy();
             }
-        }
-
-        public StopRes(loadId: number): boolean {
+        };
+        ResMgr.prototype.StopRes = function (loadId) {
             if (loadId == 0) {
                 return false;
             }
             return this.assetCache.StopAsset(loadId);
-        }
-
-        //单例
-        private static _instance: ResMgr;
-        public static GetInstance() {
+        };
+        ResMgr.GetInstance = function () {
             ResMgr._instance = ResMgr._instance || new ResMgr();
             return ResMgr._instance;
-        }
-    }
-}
+        };
+        return ResMgr;
+    }());
+    Res.ResMgr = ResMgr;
+})(Res || (Res = {}));
+//# sourceMappingURL=ResMgr.js.map

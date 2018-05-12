@@ -22,11 +22,12 @@ module Res {
         }
 
         public GetAsset(): any {
-            if (this.mAssetObj instanceof Laya.Sprite3D) {
-                return Laya.Sprite3D.instantiate(this.mAssetObj);
-            } else if (this.mAssetObj instanceof Laya.Scene) {
-                return this.mAssetObj;
-            }
+            // console.log(this.mAssetObj);      
+            // if (this.mAssetObj instanceof Laya.Sprite3D) {
+            //     return Laya.Sprite3D.instantiate(this.mAssetObj);
+            // } else if (this.mAssetObj instanceof Laya.Scene) {
+            //     return this.mAssetObj;
+            // }
             return this.mAssetObj;
         }
 

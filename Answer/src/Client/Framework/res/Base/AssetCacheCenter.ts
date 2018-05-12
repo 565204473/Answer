@@ -24,7 +24,22 @@ module Res {
             }
         }
 
-        
-    }
+        public StopAsset(loadId: number): boolean {
+            let path: string = this.dicLoading[loadId.toString()];
+            let isLoading: boolean = undefined != path;
+            if (isLoading) {
+                delete this.dicLoading[loadId];
+                return this.loaderAsync.Stop(loadId);
+            }
+            return false;
+        }
 
+        public UnloadAsset(path: string): boolean {
+            let asset: Asset = this.dicAssets[path];
+            if (undefined != asset) {
+                asset.Dispose();
+            }
+            return false;
+        }
+    }
 }

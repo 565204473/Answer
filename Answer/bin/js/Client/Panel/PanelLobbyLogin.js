@@ -39,6 +39,7 @@ var UI;
         PanelLobbyLogin.prototype.OnBtnStartClick = function () {
             UI.UIMgr.GetInstance().Hide(UI.LOBBY_LOGIN);
             UI.UIMgr.GetInstance().Show(UI.LOBBY_GAME, UI.Scope.Battle);
+            Res.ResTest.GetInstance().LoadJson();
         };
         return PanelLobbyLogin;
     }(UI.BasePanel));

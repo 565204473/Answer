@@ -44,8 +44,6 @@ var UI;
             }
         };
         PanelBattleGame.prototype.SetTxtTimesData = function (times) {
-            this.view.TxtTimes.text = "时间:" + times;
-            console.log(intTimes - times);
             Gameplay.GetInstance().SetTimes(intTimes - times);
         };
         PanelBattleGame.prototype.InitData = function () {

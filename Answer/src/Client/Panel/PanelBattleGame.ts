@@ -39,8 +39,6 @@ namespace UI {
         }
 
         private SetTxtTimesData(times: number): void {
-            this.view.TxtTimes.text = "时间:" + times;
-            console.log(intTimes - times);
             Gameplay.GetInstance().SetTimes(intTimes - times);
         }
 
