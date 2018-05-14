@@ -2,6 +2,21 @@
 import View=laya.ui.View;
 import Dialog=laya.ui.Dialog;
 module ui {
+    export class EventExampleUI extends View {
+
+        public static  uiView:any ={"type":"View","props":{"width":600,"height":400}};
+        constructor(){ super()}
+        createChildren():void {
+        
+            super.createChildren();
+            this.createView(ui.EventExampleUI.uiView);
+
+        }
+
+    }
+}
+
+module ui {
     export class GameUI extends View {
 		public BtnClose:Laya.Button;
 		public BtnAdd:Laya.Button;
