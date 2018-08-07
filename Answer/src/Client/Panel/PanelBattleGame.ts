@@ -29,7 +29,7 @@ namespace UI {
         public OnHide() {
             super.OnHide();
             this.isStatrt = false;
-            this.time = 1000;
+                this.time = 1000;
         }
 
         public Update(deltaTime: number): void {

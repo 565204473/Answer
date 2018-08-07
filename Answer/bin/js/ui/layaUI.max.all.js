@@ -12,6 +12,21 @@ var View = laya.ui.View;
 var Dialog = laya.ui.Dialog;
 var ui;
 (function (ui) {
+    var EventExampleUI = /** @class */ (function (_super) {
+        __extends(EventExampleUI, _super);
+        function EventExampleUI() {
+            return _super.call(this) || this;
+        }
+        EventExampleUI.prototype.createChildren = function () {
+            _super.prototype.createChildren.call(this);
+            this.createView(ui.EventExampleUI.uiView);
+        };
+        EventExampleUI.uiView = { "type": "View", "props": { "width": 600, "height": 400 } };
+        return EventExampleUI;
+    }(View));
+    ui.EventExampleUI = EventExampleUI;
+})(ui || (ui = {}));
+(function (ui) {
     var GameUI = /** @class */ (function (_super) {
         __extends(GameUI, _super);
         function GameUI() {
@@ -53,7 +68,7 @@ var ui;
             _super.prototype.createChildren.call(this);
             this.createView(ui.GameStartUI.uiView);
         };
-        GameStartUI.uiView = { "type": "View", "props": { "width": 1280, "height": 720 }, "child": [{ "type": "Panel", "props": { "y": 0, "x": 0, "width": 1280, "height": 720 }, "child": [{ "type": "Image", "props": { "y": -2, "x": -26, "width": 1280, "var": "ImgBg", "skin": "comp/GameStart.png", "pivotY": -8, "pivotX": -28, "height": 720 } }, { "type": "Button", "props": { "y": 597, "x": 1054, "width": 125, "var": "BtnStart", "stateNum": 1, "skin": "comp/common049.png", "sizeGrid": "15,0,5,0", "labelStrokeColor": "#f6110d", "labelStroke": 3, "labelSize": 30, "labelFont": "SimSun", "label": "开始", "height": 73 } }] }] };
+        GameStartUI.uiView = { "type": "View", "props": { "width": 1280, "height": 720 }, "child": [{ "type": "Panel", "props": { "y": 0, "x": 0, "width": 1280, "height": 720 }, "child": [{ "type": "Image", "props": { "y": -2, "x": -26, "width": 1280, "var": "ImgBg", "skin": "comp/GameStart.png", "pivotY": -8, "pivotX": -28, "height": 720 } }, { "type": "Button", "props": { "y": 597, "x": 1054, "width": 125, "var": "BtnStart", "stateNum": 1, "skin": "comp/common049.png", "sizeGrid": "15,0,5,0", "labelStrokeColor": "#f6110d", "labelStroke": 3, "labelSize": 30, "labelFont": "SimSun", "label": "开始", "height": 73 } }, { "type": "Button", "props": { "y": 578, "x": 858, "width": 100, "var": "TestTask", "stateNum": 1, "skin": "comp/ImgAdd.png", "label": "label", "height": 100 } }, { "type": "Button", "props": { "y": 437, "x": 861, "width": 100, "var": "TaskGet", "stateNum": 1, "skin": "comp/ImgDef.png", "label": "label", "height": 100 } }] }] };
         return GameStartUI;
     }(View));
     ui.GameStartUI = GameStartUI;

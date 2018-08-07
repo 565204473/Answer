@@ -68,8 +68,10 @@ module ui {
     export class GameStartUI extends View {
 		public ImgBg:Laya.Image;
 		public BtnStart:Laya.Button;
+		public TestTask:Laya.Button;
+		public TaskGet:Laya.Button;
 
-        public static  uiView:any ={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Panel","props":{"y":0,"x":0,"width":1280,"height":720},"child":[{"type":"Image","props":{"y":-2,"x":-26,"width":1280,"var":"ImgBg","skin":"comp/GameStart.png","pivotY":-8,"pivotX":-28,"height":720}},{"type":"Button","props":{"y":597,"x":1054,"width":125,"var":"BtnStart","stateNum":1,"skin":"comp/common049.png","sizeGrid":"15,0,5,0","labelStrokeColor":"#f6110d","labelStroke":3,"labelSize":30,"labelFont":"SimSun","label":"开始","height":73}}]}]};
+        public static  uiView:any ={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Panel","props":{"y":0,"x":0,"width":1280,"height":720},"child":[{"type":"Image","props":{"y":-2,"x":-26,"width":1280,"var":"ImgBg","skin":"comp/GameStart.png","pivotY":-8,"pivotX":-28,"height":720}},{"type":"Button","props":{"y":597,"x":1054,"width":125,"var":"BtnStart","stateNum":1,"skin":"comp/common049.png","sizeGrid":"15,0,5,0","labelStrokeColor":"#f6110d","labelStroke":3,"labelSize":30,"labelFont":"SimSun","label":"开始","height":73}},{"type":"Button","props":{"y":578,"x":858,"width":100,"var":"TestTask","stateNum":1,"skin":"comp/ImgAdd.png","label":"label","height":100}},{"type":"Button","props":{"y":437,"x":861,"width":100,"var":"TaskGet","stateNum":1,"skin":"comp/ImgDef.png","label":"label","height":100}}]}]};
         constructor(){ super()}
         createChildren():void {
         
